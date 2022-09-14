@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2022 by original authors @ fontello.com</metadata>
+<defs>
+<font id="welcomefont" horiz-adv-x="1000" >
+<font-face font-family="welcomefont" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="vector-4" unicode="&#xe800;" d="M302 219l171 40v-302c0-58-49-105-104-105h-256c-57 0-104 49-104 105v789c0 57 47 104 104 104h256c55 0 104-47 104-104v-203l-171-40v178h-122v-655h122v193z" horiz-adv-x="489" />
+
+<glyph glyph-name="vector-5" unicode="&#xe801;" d="M380 850c56 0 104-47 104-104v-787c0-58-48-105-104-105h-256c-57 0-104 49-104 105v787c0 57 47 104 104 104h256z m-67-171h-122v-656h122v656z" horiz-adv-x="489" />
+
+<glyph glyph-name="vector-6" unicode="&#xe802;" d="M484 850h169v-998h-169v491l-68-253h-167l-67 253v-491h-169v998h169l151-482 151 482z" horiz-adv-x="667" />
+
+<glyph glyph-name="vector-7" unicode="&#xe803;" d="M469 23v-173h-465v1000h465v-171h-296v-240h236v-171h-236v-242h296v-3z" horiz-adv-x="489" />
+
+<glyph glyph-name="vector" unicode="&#xe804;" d="M627 850h171l-27-998h-322l-45 411-44-411h-324l-25 998h169l13-827h18l109 827h169l109-827h18l11 827z" horiz-adv-x="800" />
+
+<glyph glyph-name="vector-2" unicode="&#xe805;" d="M467 23v-173h-465v1000h465v-171h-296v-240h236v-171h-236v-242h296v-3z" horiz-adv-x="467" />
+
+<glyph glyph-name="vector-3" unicode="&#xe806;" d="M409 23v-173h-407v1000h169v-827h238z" horiz-adv-x="422" />
+</font>
+</defs>
+</svg>
