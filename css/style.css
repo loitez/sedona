@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "welcomefont";
   src: url("../fonts/welcome/font/welcomefont.eot?6512698");
@@ -27,11 +28,18 @@ body {
 }
 .container {
   text-align: center;
+  max-width: 270px;
+  margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 520px;
+  }
+}
 @media (min-width: 1280px) {
   .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0;
     background-color: #fff;
@@ -201,19 +209,20 @@ body {
     display: none;
   }
 }
-.main {
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   min-height: 389px;
   background: center center no-repeat url("../images/back-desktop.jpg");
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.main__inner {
+.main-screen__inner {
   height: 100%;
 }
-.main__greetings {
+.main-screen__greetings {
   font-family: "welcomefont", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -222,7 +231,7 @@ body {
   text-transform: uppercase;
   color: #81B3D2;
 }
-.main::after {
+.main-screen::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -234,34 +243,34 @@ body {
 }
 
 @media (min-width: 768px) {
-  .main {
+  .main-screen {
     min-height: 518px;
   }
 }
 @media (min-width: 1200px) {
-  .main::after {
+  .main-screen::after {
     background-size: contain;
   }
 }
-.reasons__inner {
-  /*max-width: 270px;*/
+.intro {
+  max-width: 270px;
   margin: 0 auto;
   padding-top: 32px;
 }
 
 @media (min-width: 768px) {
-  .reasons__inner {
+  .intro {
     max-width: 520px;
     padding-top: 48px;
   }
 }
 @media (min-width: 1280px) {
-  .reasons__inner {
+  .intro {
     padding-top: 59px;
     max-width: 484px;
   }
 }
-.reasons__title {
+.intro__title {
   margin-top: 0;
   margin-bottom: 35px;
   text-align: center;
@@ -269,18 +278,22 @@ body {
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-size: 18px;
+  font-weight: 700;
   line-height: 144%;
   text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-  .reasons__title {
+  .intro__title {
     margin-top: 0;
+    margin-bottom: 55px;
     font-size: 21px;
     line-height: 124%;
   }
 }
-.reasons__subtitle {
+.intro__desc {
+  text-align: center;
+  margin-bottom: 35px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -288,49 +301,103 @@ body {
   text-transform: uppercase;
 }
 
-.reason-1 {
-  position: relative;
+.reason {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  position: relative;
   background-color: #81B3D2;
-  width: 100vw;
   color: #fff;
+  padding-top: 54px;
 }
-.reason-1::before {
+.reason::before {
   content: "";
   width: 100%;
   height: 37px;
   position: absolute;
   top: 0;
   left: 0;
-  background: center center no-repeat url("../images/background-reasons-1.svg");
+  background: top center no-repeat url("../images/background-reasons-1.svg");
   background-size: cover;
 }
-.reason-1__title {
-  margin-top: 67px;
+.reason-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 270px;
+  margin: 0 auto;
+}
+.reason__title {
+  margin-top: 33px;
   margin-bottom: 11px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   text-transform: uppercase;
 }
-.reason-1__number {
+.reason__number {
+  position: relative;
   margin-top: 0;
   margin-bottom: 17px;
 }
-.reason-1__desc {
+.reason__number::before {
+  content: "—";
+  position: absolute;
+  left: -15px;
+  top: 0;
+}
+.reason__number::after {
+  content: "—";
+  position: absolute;
+  right: -15px;
+  top: 0;
+}
+.reason__desc {
   margin-top: 0;
   margin-bottom: 37px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
+  text-transform: uppercase;
+  text-align: center;
 }
-.reason-1__img {
+.reason__image {
   height: 260px;
   width: 100%;
   object-fit: cover;
+  object-position: top;
+}
+
+@media (min-width: 768px) {
+  .reason {
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  .reason::before {
+    background: none;
+  }
+  .reason-wrapper {
+    max-width: 192px;
+  }
+  .reason__title {
+    margin-top: 0;
+  }
+  .reason__desc {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1280px) {
+  header, main {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+    background-color: #fff;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

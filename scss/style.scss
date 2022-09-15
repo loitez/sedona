@@ -1,5 +1,6 @@
 @import 'vars';
 @import 'fonts';
+@import 'mixins';
 
 @font-face {
   font-family: 'welcomefont';
@@ -35,10 +36,17 @@ body {
 
 .container {
   text-align: center;
+  max-width: 270px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 520px;
+  }
 }
 @media (min-width: 1280px) {
   .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0;
     background-color: #fff;
@@ -206,14 +214,12 @@ body {
     display: none;
   }
 }
-.main {
+.main-screen {
+  @include flex-column-center;
   position: relative;
   min-height: 389px;
   background: center center no-repeat url('../images/back-desktop.jpg');
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   &__inner {
     height: 100%;
   }
@@ -238,33 +244,33 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .main {
+  .main-screen {
     min-height: 518px;
   }
 }
 @media (min-width: 1200px) {
-  .main::after {
+  .main-screen::after {
     background-size: contain;
   }
 }
-.reasons__inner {
-  /*max-width: 270px;*/
+.intro {
+  max-width: 270px;
   margin: 0 auto;
   padding-top: 32px;
 }
 @media (min-width: 768px) {
-  .reasons__inner {
+  .intro {
     max-width: 520px;
     padding-top: 48px;
   }
 }
 @media (min-width: 1280px) {
-  .reasons__inner {
+  .intro {
     padding-top: 59px;
     max-width: 484px;
   }
 }
-.reasons__title {
+.intro__title {
   margin-top: 0;
   margin-bottom: 35px;
   text-align: center;
@@ -272,32 +278,33 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-style: normal;
   font-size: 18px;
+  font-weight: 700;
   line-height: 144%;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  .reasons__title {
+  .intro__title {
     margin-top: 0;
+    margin-bottom: 55px;
     font-size: 21px;
     line-height: 124%;
   }
 }
-.reasons__subtitle {
+.intro__desc {
+  text-align: center;
+  margin-bottom: 35px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
 }
-.reason-1 {
+.reason {
+  @include flex-column-center;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
   background-color: $accent-color;
-  width: 100vw;
   color: #fff;
+  padding-top: 54px;
   &::before {
     content: '';
     width: 100%;
@@ -305,11 +312,17 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: center center no-repeat url('../images/background-reasons-1.svg');
+    background: top center no-repeat url('../images/background-reasons-1.svg');
     background-size: cover;
   }
+  &-wrapper {
+    @include flex-column-center;
+    position: relative;
+    max-width: 270px;
+    margin: 0 auto;
+  }
   &__title {
-    margin-top: 67px;
+    margin-top: 33px;
     margin-bottom: 11px;
     font-weight: 700;
     font-size: 18px;
@@ -317,8 +330,21 @@ body {
     text-transform: uppercase;
   }
   &__number {
+    position: relative;
     margin-top: 0;
     margin-bottom: 17px;
+    &::before {
+      content: '—';
+      position: absolute;
+      left: -15px;
+      top: 0;
+    }
+    &::after {
+      content: '—';
+      position: absolute;
+      right: -15px;
+      top: 0;
+    }
   }
   &__desc {
     margin-top: 0;
@@ -326,10 +352,46 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
+    text-transform: uppercase;
+    text-align: center;
   }
-  &__img {
+  &__image {
     height: 260px;
     width: 100%;
     object-fit: cover;
+    object-position: top;
+  }
+}
+@media (min-width: 768px) {
+  .reason {
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    &::before {
+      background: none;
+    }
+    &-wrapper {
+      max-width: 192px;
+    }
+    &__title {
+      margin-top: 0;
+
+    }
+    &__number {
+
+    }
+    &__desc {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  header, main {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+    background-color: #fff;
   }
 }
