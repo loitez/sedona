@@ -67,7 +67,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative;
 }
 
 @media (min-width: 768px) {
