@@ -98,13 +98,13 @@ body {
   width: 100vw;
   min-height: 55px;
   background-color: #81B3D2;
-  box-shadow: 0px 1px 0px rgba(1, 1, 1, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .menu__list_item:first-of-type {
-  box-shadow: 0px 1px 0px rgba(1, 1, 1, 0.2);
+  box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2);
 }
 .menu__list_item:last-of-type {
-  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .menu__list_item > a {
   position: absolute;
@@ -396,6 +396,84 @@ body {
   text-align: center;
   font-style: normal;
   font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.reasons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reason-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #81B3D2;
+  color: #fff;
+}
+.reason-main > .reason-first {
+  padding-top: 54px;
+}
+.reason-main > .reason-first::before {
+  content: "";
+  width: 100%;
+  height: 37px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: top center no-repeat url("../images/background-reason-1.svg");
+  background-size: cover;
+}
+
+.advantages__list {
+  max-width: 85%;
+  padding: 15px 0 52px 0;
+  margin: 0 auto;
+  list-style: none;
+}
+.advantages__list_item {
+  padding-left: 45px;
+  padding-top: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.advantages__list_item::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: -25px;
+  transform: scale(0.5);
+  background-image: url(../images/icons.svg);
+}
+.advantages__list_item.accommodation::before {
+  background-position: 0 0;
+}
+.advantages__list_item.food::before {
+  background-position: 0 -84px;
+}
+.advantages__list_item.souvenirs::before {
+  background-position: 0 -168px;
+}
+.advantages__list_item_title {
+  margin-bottom: 17px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 144%;
+  text-transform: uppercase;
+}
+.advantages__list_item_desc {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
