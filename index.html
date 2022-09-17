@@ -48,14 +48,14 @@
         <p class="main-screen__slogan">"Because the Grand Canyon sucks!"</p>
     </section>
     <section class="intro">
-        <p cl3ass="intro__title">Cедона — небольшой городок в аризоне, заслуживающий большего!</p>
+        <p class="intro__title">Cедона — небольшой городок в аризоне, заслуживающий большего!</p>
         <p class="intro__desc">Рассмотрим 5 причин, по которым седона круче чем гранд каньон!</p>
     </section>
 
     <section class="reasons">
         <div class="reasons-wrapper">
             <ul class="reasons__list">
-                <li class="reasons__list_item">
+                <li class="reasons__list_item reason-1">
                     <div class="reason-main reason-first">
                         <div class="reason-wrapper">
                             <p class="reason__title">Настоящий городок</p>
@@ -79,7 +79,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="reasons__list_item">
+                <li class="reasons__list_item reason-2">
                     <div class="reason-main reason-second">
                         <div class="reason-wrapper">
                             <p class="reason__title">Там есть Мост дьявола</p>
@@ -89,22 +89,22 @@
                         <img src="images/reason-2.jpg" alt="" class="reason__image">
                     </div>
                 </li>
-                <li class="reason__list_item">
-                    <div class="reason-wrapper gray">
+                <li class="reasons__list_item gray reason-3">
+                    <div class="reason-wrapper">
                         <p class="reason__title">Небольшая площадь</p>
                         <p class="reason__number">№3</p>
                         <p class="reason__desc">Все интересные места находятся очень близко</p>
                     </div>
                 </li>
-                <li class="reason__list_item">
-                    <div class="reason-wrapper gray">
+                <li class="reasons__list_item gray reason-4">
+                    <div class="reason-wrapper">
                         <p class="reason__title">Красивая дорога</p>
                         <p class="reason__number">№4</p>
                         <p class="reason__desc">Ехать в седону из лас-вегаса совсем не скучно!</p>
                     </div>
                 </li>
-                <li class="reason__list_item">
-                    <div class="reason-wrapper gray">
+                <li class="reasons__list_item gray reason-5">
+                    <div class="reason-wrapper">
                         <p class="reason__title">Мало туристов</p>
                         <p class="reason__number">№5</p>
                         <p class="reason__desc">Большинство едет в гранд каньон и толпится там</p>
@@ -113,55 +113,6 @@
             </ul>
         </div>
     </section>
-
-    <!--<section class="reason reason-first">
-        <div class="reason-wrapper">
-            <p class="reason__title">Настоящий городок</p>
-            <p class="reason__number">№1</p>
-            <p class="reason__desc">Седона не атракцион для туристов, там течёт своя жизнь</p>
-        </div>
-        <img src="images/reason-1.jpg" alt="Седона" class="reason__image">
-    </section>
-    <section class="advantages">
-        <div class="advantages__card accommodation">
-            <p class="advantages__card_title">Жилье</p>
-            <p class="advantages__card_desc">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-        </div>
-        <div class="advantages__card food">
-            <p class="advantages__card_title">Еда</p>
-            <p class="advantages__card_desc">Всегда заказывай фирменный бургер, вы не разочаруетесь!</p>
-        </div>
-        <div class="advantages__card souvenirs">
-            <p class="advantages__card_title">Сувениры</p>
-            <p class="advantages__card_desc">Не только китайского, но и местного производства!</p>
-        </div>
-    </section>
-    <section class="reason reason-second">
-        <div class="reason-wrapper">
-            <p class="reason__title">Там есть Мост дьявола</p>
-            <p class="reason__number">№2</p>
-            <p class="reason__desc">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
-        </div>
-        <img src="images/reason-2.jpg" alt="" class="reason__image">
-    </section>
-    <section class="reason gray">
-        <div class="reason-wrapper">
-            <p class="reason__title">Небольшая площадь</p>
-            <p class="reason__number">№3</p>
-            <p class="reason__desc">Все интересные места находятся очень близко</p>
-        </div>
-        <div class="reason-wrapper gray">
-            <p class="reason__title">Красивая дорога</p>
-            <p class="reason__number">№4</p>
-            <p class="reason__desc">Ехать в седону из лас-вегаса совсем не скучно!</p>
-        </div>
-        <div class="reason-wrapper gray">
-            <p class="reason__title">Мало туристов</p>
-            <p class="reason__number">№5</p>
-            <p class="reason__desc">Большинство едет в гранд каньон и толпится там</p>
-        </div>
-    </section>-->
-
     <section class="hotel">
         <div class="hotel-wrapper">
             <p class="hotel__title">Заинтересовались?</p>
@@ -176,23 +127,29 @@
 <footer class="footer">
     <div class="footer__wrapper">
         <h2 class="footer__hashtag">#visitsedona</h2>
-        <div class="footer__social">
-            <a href="" class="footer__social_elem vk">
-                <svg class="vk" width="24" height="24">
-                    <use xlink:href="images/sprite.svg#icon-vk"></use>
-                </svg>
-            </a>
-            <a href="" class="footer__social_elem tg">
-                <svg class="telegram" width="24" height="24">
-                    <use xlink:href="images/sprite.svg#icon-telegram"></use>
-                </svg>
-            </a>
-            <a href="" class="footer__social_elem youtube">
-                <svg class="youtube" width="24" height="24">
-                    <use xlink:href="images/sprite.svg#icon-youtube"></use>
-                </svg>
-            </a>
-        </div>
+        <ul class="footer__social">
+            <li class="footer__social_elem">
+                <a href="">
+                    <svg class="vk" width="24" height="26">
+                        <use xlink:href="images/sprite.svg#icon-vk"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="footer__social_elem">
+                <a href="">
+                    <svg class="telegram" width="24" height="26">
+                        <use xlink:href="images/sprite.svg#icon-telegram"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="footer__social_elem">
+                <a href="">
+                    <svg class="youtube" width="24" height="26">
+                        <use xlink:href="images/sprite.svg#icon-youtube"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
         <div class="footer__copyright">
             <p class="footer__copyright_text">Разработано</p>
             <a href="">

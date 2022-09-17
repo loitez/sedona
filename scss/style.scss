@@ -417,16 +417,22 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    &_item.gray {
+        background-color: $background-second;
+        color: #000;
+        &:not(:last-child) > .reason-wrapper {
+          border-bottom: 1px solid $border-color;
+        }
+    }
   }
 }
-
 .reason {
-  &-main{
+  &-main {
     @include flex-column-center;
     position: relative;
     background-color: $accent-color;
     color: #fff;
-    & > .reason-first {
+    &.reason-first {
       padding-top: 54px;
       &::before {
         content: '';
@@ -440,7 +446,55 @@ body {
       }
     }
   }
+  &-wrapper {
+    @include flex-column-center;
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 4px;
+  }
+  &__title {
+    margin-top: 33px;
+    margin-bottom: 11px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+  &__number {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 17px;
+    &::before {
+      content: '—';
+      position: absolute;
+      left: -15px;
+      top: 0;
+    }
+    &::after {
+      content: '—';
+      position: absolute;
+      right: -15px;
+      top: 0;
+    }
+  }
+  &__desc {
+    margin-top: 0;
+    margin-bottom: 37px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__image {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
+
 .advantages__list {
   max-width: 85%;
   padding: 15px 0 52px 0;
@@ -495,6 +549,30 @@ body {
 }
 
 @media (min-width: 768px) {
+  .reasons {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 256px 330px 256px 256px;
+      grid-template-areas:
+    "reason-1 reason-1 reason-1"
+    "reason-1 reason-1 reason-1"
+    "reason-2 reason-2 reason-2"
+    "reason-3 reason-4 reason-5";
+      justify-items: center;
+      align-items: center;
+      &_item {
+        width: 100%;
+        &.gray {
+          display: inline-block;
+          &:not(:last-child) > .reason-wrapper {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
   .reason {
     &-main {
       padding-top: 0;
@@ -542,6 +620,7 @@ body {
 
 
     &-wrapper {
+      height: 256px;
       max-width: 192px;
     }
 
@@ -559,10 +638,23 @@ body {
     &__desc {
       margin-bottom: 0;
     }
+    &-1 {
+      grid-area: reason-1;
+    }
+    &-2 {
+      grid-area: reason-2;
+    }
+    &-3 {
+      grid-area: reason-3;
+    }
+    &-4 {
+      grid-area: reason-4;
+    }
+    &-5 {
+      grid-area: reason-5;
+    }
   }
 }
-
-
 @media (min-width: 1280px) {
   .reason {
     &-wrapper {
@@ -584,31 +676,31 @@ body {
 
 
 @media (min-width: 768px) {
-  .advantages {
+  .advantages__list {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top: 158px;
+    padding-top: 145px;
     padding-bottom: 59px;
-
-    &__card {
+    &_item {
       @include flex-column-center;
       padding-left: 0;
       padding-top: 0;
-      max-width: 185px;
-
+      max-width: 194px;
       &::before {
-        top: -106px;
+        top: -80px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(0.9);
       }
-
-      &_title {
-        margin-top: 0;
-      }
-
+    }
+  }
+  .advantages {
+    &__item {
       &_desc {
         text-align: center;
+      }
+      &_title {
+        margin-top: 0;
       }
     }
   }
@@ -616,6 +708,9 @@ body {
 @media (min-width: 1280px) {
   .advantages {
     padding-bottom: 79px;
+    &__list_item {
+      max-width: 300px;
+    }
   }
 }
 
@@ -628,272 +723,7 @@ body {
 
 // end reasons li
 
-.reason {
-  @include flex-column-center;
-  position: relative;
-  background-color: $accent-color;
-  color: #fff;
 
-  &.gray {
-    background-color: $background-second;
-    color: #000;
-    & > .reason-wrapper:not(:last-child) {
-      border-bottom: 1px solid $border-color;
-    }
-  }
-  &-first {
-    padding-top: 54px;
-    &::before {
-      content: '';
-      width: 100%;
-      height: 37px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: top center no-repeat url('../images/background-reason-1.svg');
-      background-size: cover;
-    }
-    /*&::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 37px;
-      width: 384px;
-      background: center center no-repeat url(../images/reason-left.svg);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 37px;
-      width: 50%;
-      background: no-repeat url(../images/reason-right.svg);
-    }*/
-  }
-  &-wrapper {
-    @include flex-column-center;
-    position: relative;
-    max-width: 270px;
-    margin: 0 auto;
-    padding-top: 4px;
-  }
-  &__title {
-    margin-top: 33px;
-    margin-bottom: 11px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 26px;
-    text-transform: uppercase;
-  }
-  &__number {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 17px;
-    &::before {
-      content: '—';
-      position: absolute;
-      left: -15px;
-      top: 0;
-    }
-    &::after {
-      content: '—';
-      position: absolute;
-      right: -15px;
-      top: 0;
-    }
-  }
-  &__desc {
-    margin-top: 0;
-    margin-bottom: 37px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  &__image {
-    height: 260px;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-@media (min-width: 768px) {
-  .reason {
-    padding-top: 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-
-    &.reason-second {
-      grid-template-columns: 2fr 1fr;
-      & > .reason__image {
-        order: 0;
-      }
-      & > .reason-wrapper {
-        order: 3;
-      }
-    }
-
-    &.gray {
-      @include flex-row-center;
-      padding: 41px 0;
-      & > .reason-wrapper:not(:last-child) {
-        border-bottom: none;
-      }
-      & > .reason-wrapper:not(:first-of-type) {
-        max-width: 160px;
-      }
-      & > .reason-wrapper {
-        & > .reason__title {
-          margin-bottom: 20px;
-        }
-        & > .reason__desc {
-          margin-bottom: 20px;
-        }
-      }
-    }
-
-    &::before {
-      height: 0;
-      background: none;
-    }
-
-    &-wrapper {
-        max-width: 192px;
-    }
-
-    &__title {
-      margin-top: 0;
-      font-size: 21px;
-      line-height: 26px;
-      text-align: center;
-    }
-
-    &__number {
-
-    }
-
-    &__desc {
-        margin-bottom: 0;
-    }
-  }
-}
-
-@media (min-width: 1280px) {
-  .reason {
-    &-wrapper {
-      max-width: 290px;
-    }
-    &.reason-second > .wrapper {
-      max-width: 243px;
-    }
-    &.gray  {
-      > .reason-wrapper:not(:first-of-type) {
-        max-width: 290px;
-      }
-      > .reason-wrapper:first-of-type {
-      max-width: 315px;
-      }
-    }
-  }
-}
-
-
-
-.advantages {
-    max-width: 85%;
-    padding-bottom: 52px;
-    padding-top: 15px;
-    margin: 0 auto;
-
-    &__card {
-      padding-left: 45px;
-      padding-top: 8px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-
-      &::before {
-        content: '';
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 0;
-        left: -25px;
-        transform: scale(0.5);
-        background-image: url(../images/icons.svg);
-      }
-
-      &.accommodation::before {
-        background-position: 0 0;
-      }
-
-      &.food::before {
-        background-position: 0 -84px;
-      }
-
-      &.souvenirs::before {
-        background-position: 0 -168px;
-      }
-
-      &_title {
-        margin-bottom: 17px;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 144%;
-        text-transform: uppercase;
-      }
-
-      &_desc {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 14px;
-        line-height: 150%;
-        text-transform: uppercase;
-      }
-    }
-}
-
-@media (min-width: 768px) {
-    .advantages {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding-top: 158px;
-      padding-bottom: 59px;
-
-      &__card {
-        @include flex-column-center;
-        padding-left: 0;
-        padding-top: 0;
-        max-width: 185px;
-
-        &::before {
-          top: -106px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-
-        &_title {
-          margin-top: 0;
-        }
-
-        &_desc {
-          text-align: center;
-        }
-      }
-    }
-}
-@media (min-width: 1280px) {
-    .advantages {
-      padding-bottom: 79px;
-    }
-}
 
 .hotel {
   background-color: #fff;
@@ -974,6 +804,8 @@ body {
     text-align: center;
   }
   &__social {
+    margin-top: 0;
+    padding-left: 0;
     margin-bottom: 47px;
     &_elem {
       position: relative;
@@ -984,7 +816,7 @@ body {
       &:not(:last-of-type) {
         margin-right: 6px;
       }
-      & > svg {
+      & > a > svg {
         position: absolute;
         fill: #fff;
         top: 50%;
