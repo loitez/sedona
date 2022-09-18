@@ -111,11 +111,16 @@ body {
     &:last-of-type {
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
+    &:hover {
+      background-color: $accent-hover-color;
+    }
     &>a {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 100%;
+      padding: 15px;
       vertical-align: center;
       color: #fff;
       text-transform: uppercase;
@@ -168,6 +173,12 @@ body {
         font-size: 14px;
         line-height: 150%;
         color: #000;
+        &:hover {
+          color: $accent-color;
+        }
+        &.active {
+          color: $menu-active-color;
+        }
       }
     }
   }
@@ -762,6 +773,8 @@ body {
     text-decoration: none;
     color: #fff;
     background-color: $accent-color;
+    cursor: pointer;
+    @include button-interaction;
   }
 }
 @media (min-width: 768px) {
@@ -813,10 +826,20 @@ body {
       height: 48px;
       display: inline-block;
       background-color: $accent-color;
+      cursor: pointer;
+      @include button-interaction;
+      &:active {
+        & > a > svg {
+          opacity: 0.3;
+        }
+      }
       &:not(:last-of-type) {
         margin-right: 6px;
       }
-      & > a > svg {
+      & > a {
+        cursor: pointer;
+        & > svg {
+        }
         position: absolute;
         fill: #fff;
         top: 50%;
@@ -826,7 +849,31 @@ body {
     }
   }
   &__copyright {
-    @include flex-row-center;
+    &_link {
+      @include flex-row-center;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        & > p {
+          color: $accent-hover-color;
+        }
+        & > svg {
+          fill: $accent-hover-color;
+        }
+      }
+      &:active {
+        & > p {
+          color: $accent-active-color;
+        }
+        & > svg {
+          fill: $accent-active-color;
+        }
+      }
+      & > svg {
+        fill: #000;
+      }
+    }
     &_text {
       margin: 0 10px 0 0;
       font-weight: 400;
@@ -835,7 +882,6 @@ body {
       text-transform: uppercase;
       text-align: center;
     }
-
   }
 }
 @media (min-width: 768px) {
