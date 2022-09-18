@@ -164,6 +164,9 @@ body {
   .menu__list_item:first-of-type, .menu__list_item :last-of-type {
     box-shadow: none;
   }
+  .menu__list_item:hover {
+    background-color: transparent;
+  }
   .menu__list_item > a {
     position: static;
     font-size: 14px;

@@ -168,6 +168,9 @@ body {
       &:first-of-type, :last-of-type {
         box-shadow: none;
       }
+      &:hover {
+        background-color: transparent;
+      }
       &>a {
         position: static;
         font-size: 14px;
