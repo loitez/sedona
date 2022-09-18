@@ -3,22 +3,22 @@
   font-family: "sullivanfill";
   font-weight: 400;
   font-style: normal;
-  src: url(../fonts/sullivan-fill-webfont.eot);
-  src: url(../fonts/sullivan-fill-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/sullivan-fill-webfont.woff) format("woff"), url(../fonts/sullivan-fill-webfont.ttf) format("truetype"), url(../fonts/sullivan-fill-webfont.svg#sullivanfill) format("svg");
+  src: url(../../../fonts/sullivan-fill-webfont.eot);
+  src: url(../../../fonts/sullivan-fill-webfont.eot?#iefix) format("embedded-opentype"), url(../../../fonts/sullivan-fill-webfont.woff) format("woff"), url(../../../fonts/sullivan-fill-webfont.ttf) format("truetype"), url(../../../fonts/sullivan-fill-webfont.svg#sullivanfill) format("svg");
 }
 @font-face {
   font-family: "wisdom_scriptregular";
   font-weight: 400;
   font-style: normal;
-  src: url(../fonts/wisdom_script_aj-webfont.eot);
-  src: url(../fonts/wisdom_script_aj-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/wisdom_script_aj-webfont.woff) format("woff"), url(../fonts/wisdom_script_aj-webfont.ttf) format("truetype");
+  src: url(../../../fonts/wisdom_script_aj-webfont.eot);
+  src: url(../../../fonts/wisdom_script_aj-webfont.eot?#iefix) format("embedded-opentype"), url(../../../fonts/wisdom_script_aj-webfont.woff) format("woff"), url(../../../fonts/wisdom_script_aj-webfont.ttf) format("truetype");
 }
 @font-face {
   font-family: "zeroneroblack";
   font-weight: 400;
   font-style: normal;
-  src: url(../fonts/zeronero-webfont.eot);
-  src: url(../fonts/zeronero-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/zeronero-webfont.woff) format("woff"), url(../fonts/zeronero-webfont.ttf) format("truetype"), url(../fonts/zeronero-webfont.svg#zeroneroblack) format("svg");
+  src: url(../../../fonts/zeronero-webfont.eot);
+  src: url(../../../fonts/zeronero-webfont.eot?#iefix) format("embedded-opentype"), url(../../../fonts/zeronero-webfont.woff) format("woff"), url(../../../fonts/zeronero-webfont.ttf) format("truetype"), url(../../../fonts/zeronero-webfont.svg#zeroneroblack) format("svg");
 }
 html {
   box-sizing: border-box;
@@ -249,7 +249,7 @@ body {
   justify-content: flex-start;
   position: relative;
   min-height: 389px;
-  background: 0 20% no-repeat url("../images/back-desktop.jpg");
+  background: 0 20% no-repeat url("../../../images/back-desktop.jpg");
   background-size: cover;
 }
 .main-screen__inner {
@@ -327,7 +327,7 @@ body {
   left: 0;
   width: 100%;
   height: 57px;
-  background: center center no-repeat url("../images/intro-triangle.svg");
+  background: center center no-repeat url("../../../images/intro-triangle.svg");
   background-size: cover;
 }
 
@@ -444,7 +444,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: top center no-repeat url("../images/background-reason-1.svg");
+  background: top center no-repeat url("../../../images/background-reason-1.svg");
   background-size: cover;
 }
 .reason-wrapper {
@@ -521,7 +521,7 @@ body {
   top: 0;
   left: -25px;
   transform: scale(0.5);
-  background-image: url(../images/icons.svg);
+  background-image: url(../../../images/icons.svg);
 }
 .advantages__list_item.accommodation::before {
   background-position: 0 0;
