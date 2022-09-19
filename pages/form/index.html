@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Form</title>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="logo">
+        <a href="" class="logo__link">
+          <img src="../../images/logo.svg" alt="Логотип">
+        </a>
+      </div>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__list_item">
+            <a href="../main/index.html">Главная</a>
+          </li>
+          <li class="menu__list_item">
+            <a href="" class="active">Фото и видео</a>
+          </li>
+          <li class="menu__list_item">
+            <a href="">Форма отзыва</a>
+          </li>
+          <li class="menu__list_item">
+            <a href="">HTML Academy</a>
+          </li>
+        </ul>
+        <button class="menu__btn"></button>
+      </nav>
+    </div>
+  </div>
+</header>
+<main class="main">
+  <section class="main-screen">
+    <h1 class="main-screen__title">Sedona</h1>
+  </section>
+  <section class="intro">
+    <p class="intro__title">Оставьте свой отзыв</p>
+    <p class="intro__desc">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+  </section>
+  <section class="form">
+    <div class="form-wrapper">
+      <fieldset>
+        <legend>Представьтесь</legend>
+        <ul class="form__list">
+          <p class="form__list_title">Представьтесь</p>
+          <li class="form__list_item">
+            <label class="form__label" for="first-name">Имя:*</label>
+            <input class="form__input" type="text" id="first-name" placeholder="Имя" value="Пётр" required>
+          </li>
+          <li class="form__list_item">
+            <label class="form__label" for="surname">Фамилия:*</label>
+            <input class="form__input" type="text" id="surname" placeholder="Фамилия" value="Пустота" required>
+          </li>
+          <li class="form__list_item">
+            <label class="form__label" for="patronymic">Отчество:*</label>
+            <input class="form__input" type="text" id="patronymic" placeholder="Отчество" value="Викторович" required>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Контактная информация</legend>
+        <ul class="form__list">
+          <p class="form__list_title">Контактная информация:</p>
+          <li class="form__list_item">
+            <label class="form__label" for="tel">Контактный телефон:*</label>
+            <input class="form__input" type="tel" id="tel" placeholder="Введите телефон" required>
+          </li>
+          <li class="form__list_item">
+            <label class="form__label" for="email">Электронная почта:*</label>
+            <input class="form__input" type="tel" id="email" placeholder="Введите e-mail" required>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Ваше общее впечатление</legend>
+        <ul class="form__list">
+          <p class="form__list_title">Ваше общее впечатление:</p>
+          <li class="form__list_item">
+            <label class="form__label" for="positive">Скорее положительное</label>
+            <input class="form__input" type="radio" name="impression" id="positive">
+          </li>
+          <li class="form__list_item">
+            <label class="form__label" for="negative">Скорее отрицательное</label>
+            <input class="form__input" type="radio" name="impression" id="negative">
+          </li>
+          <li class="form__list_item">
+            <label class="form__label" for="mixed">Затрудняюсь ответить</label>
+            <input class="form__input" type="radio" name="impression" id="mixed">
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__wrapper">
+    <h2 class="footer__hashtag">#visitsedona</h2>
+    <ul class="footer__social">
+      <li class="footer__social_elem">
+        <a href="">
+          <svg class="vk" width="24" height="26">
+            <use xlink:href="../../../images/sprite.svg#icon-vk"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social_elem">
+        <a href="">
+          <svg class="telegram" width="24" height="26">
+            <use xlink:href="../../../images/sprite.svg#icon-telegram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social_elem">
+        <a href="">
+          <svg class="youtube" width="24" height="26">
+            <use xlink:href="../../../images/sprite.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div class="footer__copyright">
+      <a href="" class="footer__copyright_link">
+        <p class="footer__copyright_text">Разработано</p>
+        <svg class="html" width="26" height="34">
+          <use xlink:href="../../../images/sprite.svg#icon-html"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</footer>
+<script src="../../script.js"></script>
+</body>
+</html>
