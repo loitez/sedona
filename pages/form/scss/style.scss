@@ -355,6 +355,62 @@ input[type="tel"], input[type="email"] {
   color: rgba(0, 0, 0, 0.3);
 }
 
+input[name=impression] {
+  display: none;
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background-color: $desc-text-color;
+  }
+  & + label {
+    padding: 10px 0 10px 62px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 144%;
+    text-transform: none;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50px;
+      background-color: $gray-background-color;
+    }
+
+  }
+}
+/*::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background-color: $desc-text-color;
+}*/
+
+
+.form__list_item {
+  &.radio {
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
 
 .footer {
   padding: 29px 0;
