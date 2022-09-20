@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <title>Form</title>
 </head>
 <body>
@@ -52,8 +54,8 @@
     <div class="form-wrapper">
       <fieldset>
         <legend>Представьтесь</legend>
+        <p class="form__list_title">Представьтесь</p>
         <ul class="form__list">
-          <p class="form__list_title">Представьтесь</p>
           <li class="form__list_item">
             <label class="form__label" for="first-name">Имя:*</label>
             <input class="form__input" type="text" id="first-name" placeholder="Имя" value="Пётр" required>
@@ -70,8 +72,8 @@
       </fieldset>
       <fieldset>
         <legend>Контактная информация</legend>
+        <p class="form__list_title">Контактная информация:</p>
         <ul class="form__list">
-          <p class="form__list_title">Контактная информация:</p>
           <li class="form__list_item">
             <label class="form__label" for="tel">Контактный телефон:*</label>
             <input class="form__input" type="tel" id="tel" placeholder="Введите телефон" required>
@@ -84,22 +86,51 @@
       </fieldset>
       <fieldset>
         <legend>Ваше общее впечатление</legend>
+        <p class="form__list_title">Ваше общее впечатление:</p>
         <ul class="form__list">
-          <p class="form__list_title">Ваше общее впечатление:</p>
           <li class="form__list_item radio">
-            <input class="form__input" type="radio" name="impression" id="impression-1" value="Скорее положительное" checked>
+            <input class="form__input visually-hidden" type="radio" name="impression" id="impression-1" value="Скорее положительное" checked>
             <label class="form__label" for="impression-1">Скорее положительное</label>
           </li>
           <li class="form__list_item radio">
-            <input class="form__input" type="radio" name="impression" id="impression-2" value="Скорее отрицательное">
+            <input class="form__input visually-hidden" type="radio" name="impression" id="impression-2" value="Скорее отрицательное">
             <label class="form__label" for="impression-2">Скорее отрицательное</label>
           </li>
           <li class="form__list_item radio">
-            <input class="form__input" type="radio" name="impression" id="impression-3" value="Затрудняюсь ответить">
+            <input class="form__input visually-hidden" type="radio" name="impression" id="impression-3" value="Затрудняюсь ответить">
             <label class="form__label" for="impression-3">Затрудняюсь ответить</label>
           </li>
         </ul>
       </fieldset>
+      <fieldset>
+        <legend>Посещенные достопримечательности</legend>
+        <p class="form__list_title">Посещенные достопримечательности:</p>
+        <ul class="form__list">
+          <li class="form__list_item checkbox">
+            <input class="form__input visually-hidden" type="checkbox" name="places" id="places-1" value="Мост Дьявола" checked>
+            <label class="form__label" for="places-1">Мост Дьявола</label>
+          </li>
+          <li class="form__list_item checkbox">
+            <input class="form__input visually-hidden" type="checkbox" name="places" id="places-2" value="Гора-Колокол">
+            <label class="form__label" for="places-2">Гора-Колокол</label>
+          </li>
+          <li class="form__list_item checkbox">
+            <input class="form__input visually-hidden" type="checkbox" name="places" id="places-3" value="Слайд-парк">
+            <label class="form__label" for="places-3">Слайд-парк</label>
+          </li>
+          <li class="form__list_item checkbox">
+            <input class="form__input visually-hidden" type="checkbox" name="places" id="places-4" value="Красные скалы">
+            <label class="form__label" for="places-4">Красные скалы</label>
+          </li>
+        </ul>
+      </fieldset>
+      <div class="emotions-wrapper">
+        <p class="form__list_title">Опишите свои эмоции:</p>
+        <label for="emotions"></label>
+        <textarea name="emotions" id="emotions" cols="30" placeholder="Опишите подробно все свои восторги"></textarea>
+      </div>
+      <input class="visually-hidden" type="submit" name="submit" id="submit">
+      <label for="submit">Отправить отзыв</label>
     </div>
 
   </section>

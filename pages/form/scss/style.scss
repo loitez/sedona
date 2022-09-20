@@ -297,7 +297,18 @@ body {
     }
   }
 }
-
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 legend {
   display: none;
 }
@@ -306,6 +317,9 @@ fieldset {
   margin: 0;
   border: none;
   border-top: 1px solid $light-gray-color;
+  &:last-of-type {
+    border-bottom: 1px solid $light-gray-color;
+  }
 }
 .form {
   &__list {
@@ -353,10 +367,24 @@ input[type="tel"], input[type="email"] {
   position: relative;
   padding-right: 58px;
   color: rgba(0, 0, 0, 0.3);
+  &::after {
+    content: '\f095';
+    font-family: 'Font Awesome 6 free', sans-serif;
+    font-weight: 900;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    padding: 20px;
+    z-index: 999;
+    /*background-color: $input-icon-background-color;*/
+  }
+  // pseudo-elements are not allowed - fix
 }
 
 input[name=impression] {
-  display: none;
   &:checked + label:after {
     content: '';
     position: absolute;
@@ -390,6 +418,39 @@ input[name=impression] {
 
   }
 }
+
+input[name=places] {
+  &:checked + label::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 free', sans-serif;
+    font-weight: 900;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 23px;
+  }
+  & + label {
+    position: relative;
+    padding: 10px 0 10px 62px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 144%;
+    text-transform: none;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      background-color: $gray-background-color;
+    }
+  }
+}
 /*::after {
   content: '';
   position: absolute;
@@ -403,14 +464,66 @@ input[name=impression] {
 }*/
 
 
+
 .form__list_item {
   &.radio {
     &:not(:last-of-type) {
       margin-bottom: 16px;
     }
   }
+  &.checkbox {
+
+  }
+}
+.emotions-wrapper {
+  max-width: 85%;
+  padding-top: 24px;
+  margin: 0 auto 56px auto;
+  & > textarea {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    display: block;
+    overflow: hidden;
+    background-color: $gray-background-color;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 144%;
+    color: rgba(0, 0, 0, 0.3);
+    resize: both;
+    min-height: 150px;
+  }
 }
 
+input[type="submit"] {
+  & + label {
+    position: relative;
+    display: block;
+    max-width: 281px;
+    margin: 0 auto 48px auto;
+    padding: 16px 33px;
+    background-color: $accent-color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 124%;
+    text-transform: uppercase;
+    color: #fff;
+    &::after {
+      content: '* — обязательные поля';
+      position: absolute;
+      right: 0;
+      bottom: -21px;
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 175%;
+      color: rgba(51, 51, 51, 0.6);
+      text-transform: uppercase;
+    }
+  }
+}
 
 .footer {
   padding: 29px 0;

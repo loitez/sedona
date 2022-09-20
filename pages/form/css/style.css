@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "zeroneroblack";
   font-weight: 400;
@@ -296,6 +297,19 @@ body {
     line-height: 87%;
   }
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 legend {
   display: none;
 }
@@ -305,6 +319,9 @@ fieldset {
   margin: 0;
   border: none;
   border-top: 1px solid #E5E5E5;
+}
+fieldset:last-of-type {
+  border-bottom: 1px solid #E5E5E5;
 }
 
 .form__list {
@@ -355,10 +372,21 @@ input[type=tel], input[type=email] {
   padding-right: 58px;
   color: rgba(0, 0, 0, 0.3);
 }
-
-input[name=impression] {
-  display: none;
+input[type=tel]::after, input[type=email]::after {
+  content: "\f095";
+  font-family: "Font Awesome 6 free", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  padding: 20px;
+  z-index: 999;
+  /*background-color: $input-icon-background-color;*/
 }
+
 input[name=impression]:checked + label:after {
   content: "";
   position: absolute;
@@ -391,6 +419,37 @@ input[name=impression] + label::before {
   background-color: #F2F2F2;
 }
 
+input[name=places]:checked + label::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 free", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 23px;
+}
+input[name=places] + label {
+  position: relative;
+  padding: 10px 0 10px 62px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 144%;
+  text-transform: none;
+  cursor: pointer;
+}
+input[name=places] + label::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  background-color: #F2F2F2;
+}
+
 /*::after {
   content: '';
   position: absolute;
@@ -404,6 +463,53 @@ input[name=impression] + label::before {
 }*/
 .form__list_item.radio:not(:last-of-type) {
   margin-bottom: 16px;
+}
+.emotions-wrapper {
+  max-width: 85%;
+  padding-top: 24px;
+  margin: 0 auto 56px auto;
+}
+.emotions-wrapper > textarea {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  display: block;
+  overflow: hidden;
+  background-color: #F2F2F2;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 144%;
+  color: rgba(0, 0, 0, 0.3);
+  resize: both;
+  min-height: 150px;
+}
+
+input[type=submit] + label {
+  position: relative;
+  display: block;
+  max-width: 281px;
+  margin: 0 auto 48px auto;
+  padding: 16px 33px;
+  background-color: #81B3D2;
+  text-align: center;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 124%;
+  text-transform: uppercase;
+  color: #fff;
+}
+input[type=submit] + label::after {
+  content: "* — обязательные поля";
+  position: absolute;
+  right: 0;
+  bottom: -21px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 175%;
+  color: rgba(51, 51, 51, 0.6);
+  text-transform: uppercase;
 }
 
 .footer {
