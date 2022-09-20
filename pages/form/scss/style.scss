@@ -322,6 +322,9 @@ fieldset {
   }
 }
 .form {
+  &-wrapper {
+    padding-bottom: 48px;
+  }
   &__list {
     max-width: 85%;
     margin: 0 auto;
@@ -362,6 +365,26 @@ fieldset {
     font-size: 18px;
     line-height: 144%;
   }
+  &__icon {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-color: $input-icon-background-color;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+    & > svg {
+      margin: 0 auto;
+      fill: #000;
+    }
+  }
+}
+.field-wrapper {
+  position: relative;
+  width: 100%;
 }
 input[type="tel"], input[type="email"] {
   position: relative;
@@ -379,9 +402,7 @@ input[type="tel"], input[type="email"] {
     height: 18px;
     padding: 20px;
     z-index: 999;
-    /*background-color: $input-icon-background-color;*/
   }
-  // pseudo-elements are not allowed - fix
 }
 
 input[name=impression] {
@@ -476,11 +497,11 @@ input[name=places] {
   }
 }
 .emotions-wrapper {
-  max-width: 85%;
+  @include flex-column-center;
   padding-top: 24px;
-  margin: 0 auto 56px auto;
+  margin-bottom: 56px;
   & > textarea {
-    width: 100%;
+    width: 85%;
     padding: 16px;
     border: none;
     display: block;
@@ -498,10 +519,11 @@ input[name=places] {
 
 input[type="submit"] {
   & + label {
+    @include button-interaction;
     position: relative;
     display: block;
     max-width: 281px;
-    margin: 0 auto 48px auto;
+    margin: 0 auto;
     padding: 16px 33px;
     background-color: $accent-color;
     text-align: center;
@@ -510,6 +532,7 @@ input[type="submit"] {
     line-height: 124%;
     text-transform: uppercase;
     color: #fff;
+    cursor: pointer;
     &::after {
       content: '* — обязательные поля';
       position: absolute;
@@ -524,6 +547,73 @@ input[type="submit"] {
     }
   }
 }
+
+@media (min-width: 768px) {
+  .form {
+    @include flex-column-center;
+  }
+  fieldset {
+    border-top: none;
+    &:last-of-type {
+      border-bottom: none;
+    }
+    &.fieldset-name {
+      width: 323px;
+      padding-right: 43px;
+      border-right: 1px solid $border-form-tablet;
+    }
+    &.fieldset-contacts {
+      width: 324px;
+      padding-left: 26px;
+      & > label {
+        width: 280px;
+      }
+    }
+    &.fieldset-feedback, &.fieldset-sights {
+      width: 648px;
+      grid-column: 1 / -1;
+    }
+  }
+  .emotions-wrapper, .submit {
+    width: 648px;
+    grid-column: 1 / -1;
+  }
+  .form {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__list_title {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 19%;
+        height: 1px;
+        margin-left: 16px;
+        background-color: $border-form-tablet;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 19%;
+        height: 1px;
+        margin-left: 16px;
+        background-color: $border-form-tablet;
+      }
+    }
+  }
+}
+
+
+
+
 
 .footer {
   padding: 29px 0;
